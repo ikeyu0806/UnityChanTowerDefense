@@ -5,6 +5,7 @@ using UnityEngine;
 public class AttackerController : MonoBehaviour
 {
     int unitHP = 5;
+    bool isCollision = false;
 
     // Start is called before the first frame update
     void Start()
@@ -15,12 +16,20 @@ public class AttackerController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        transform.position += new Vector3(2f, 0, 0) * Time.deltaTime;
+        if (!isCollision)
+        {
+            transform.position += new Vector3(2f, 0, 0) * Time.deltaTime;
+        }
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        Debug.Log("aaa");
+        isCollision = true;
+    }
+
+    private void OnCollisionExit2D(Collision2D collision)
+    {
+        isCollision = false;
     }
 
     public void TakeHit(float damage)
