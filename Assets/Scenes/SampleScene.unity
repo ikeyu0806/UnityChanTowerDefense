@@ -1515,6 +1515,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   timeOut: 3
   attacker: {fileID: 1719358188232364124, guid: 0d1a16628ddf54fcfa6587feabadb751, type: 3}
+  castle: {fileID: 75844220}
 --- !u!1 &1889369010
 GameObject:
   m_ObjectHideFlags: 0
