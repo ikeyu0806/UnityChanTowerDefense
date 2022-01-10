@@ -15,12 +15,12 @@ public class AttackerController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        transform.position += new Vector3(1f, 0, 0) * Time.deltaTime;
+        transform.position += new Vector3(2f, 0, 0) * Time.deltaTime;
     }
 
-    private void OnCollisionEnter2D(Collision2D collision)
+    private void OnTriggerEnter2D(Collider2D collision)
     {
-        
+        Debug.Log("aaa");
     }
 
     public void TakeHit(float damage)

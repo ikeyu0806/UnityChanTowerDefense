@@ -1431,7 +1431,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a089c05df1e1e44cfaae116e55276964, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  timeOut: 3
+  timeOut: 1
   playerUnit: {fileID: 1719358188232364124, guid: 0d1a16628ddf54fcfa6587feabadb751, type: 3}
   enemyUnit: {fileID: 3111278947056743817, guid: 2f9e20238be584f76909798cb434bb72, type: 3}
   castle: {fileID: 75844220}
@@ -1658,7 +1658,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4614213691818669270, guid: ddad8f26de4834609b87480df9c86d80, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: 2.16
       objectReference: {fileID: 0}
     - target: {fileID: 4614213691818669270, guid: ddad8f26de4834609b87480df9c86d80, type: 3}
       propertyPath: m_LocalPosition.z
