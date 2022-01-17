@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 1719358188232364127}
   - component: {fileID: 1970064595726594803}
   - component: {fileID: 8936718020576152269}
+  - component: {fileID: 5861083918139915305}
   m_Layer: 8
   m_Name: AttackerUnitychan
   m_TagString: PlayerCharactor
@@ -154,3 +155,17 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!114 &5861083918139915305
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1719358188232364124}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 28244425df5394e5086d39ec19635a58, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  attackPower: 15
+  unitHP: 5
