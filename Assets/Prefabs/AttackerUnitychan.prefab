@@ -168,4 +168,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   attackPower: 15
-  unitHP: 5
+  unitHP: 100
