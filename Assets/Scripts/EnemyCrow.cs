@@ -5,11 +5,12 @@ using UnityEngine;
 public class EnemyCrow : MonoBehaviour
 {
     bool isCollision = false;
+    GameObject target;
 
     // Start is called before the first frame update
     void Start()
     {
-
+        target = GameObject.Find("Castle");
     }
 
     // Update is called once per frame
@@ -17,7 +18,7 @@ public class EnemyCrow : MonoBehaviour
     {
         if (!isCollision)
         {
-            transform.position += new Vector3(-3f, 0, 0) * Time.deltaTime;
+            transform.position = Vector3.MoveTowards(transform.position, target.transform.position, 0.1f);
         }
     }
 

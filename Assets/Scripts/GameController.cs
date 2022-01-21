@@ -33,7 +33,8 @@ public class GameController : MonoBehaviour
 
         if (generateEnemyUnitTime >= timeOut)
         {
-            Instantiate(enemyUnit, new Vector3(10f, castle.transform.position.y, 0), Quaternion.identity);
+            int y = Random.Range(-4, 4);
+            Instantiate(enemyUnit, new Vector3(10f, y, 0), Quaternion.identity);
 
             generateEnemyUnitTime = 0.0f;
         }
