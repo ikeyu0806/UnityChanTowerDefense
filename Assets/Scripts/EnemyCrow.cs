@@ -6,11 +6,13 @@ public class EnemyCrow : MonoBehaviour
 {
     bool isCollision = false;
     GameObject target;
+    GameObject gameController;
 
     // Start is called before the first frame update
     void Start()
     {
         target = GameObject.Find("Castle");
+        gameController = GameObject.Find("GameController");
     }
 
     // Update is called once per frame
@@ -18,7 +20,16 @@ public class EnemyCrow : MonoBehaviour
     {
         if (!isCollision)
         {
-            transform.position = Vector3.MoveTowards(transform.position, target.transform.position, 0.1f);
+            transform.position = Vector3.MoveTowards(transform.position, target.transform.position, 0.08f);
+        }
+    }
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject.tag == "Castle")
+        {
+            Destroy(gameObject);
+            gameController.GetComponent<GameController>().reduceLife();
         }
     }
 

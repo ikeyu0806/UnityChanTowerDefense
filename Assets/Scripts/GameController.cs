@@ -1,9 +1,11 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class GameController : MonoBehaviour
 {
+    private int life = 3;
     public float timeOut;
     private float generatePlayerUnitTime;
     private float generateEnemyUnitTime;
@@ -38,5 +40,15 @@ public class GameController : MonoBehaviour
 
             generateEnemyUnitTime = 0.0f;
         }
+
+        if (life <= 0)
+        {
+            SceneManager.LoadScene("GameOverScene");
+        }
+    }
+
+    public void reduceLife()
+    {
+        life--;
     }
 }
