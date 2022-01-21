@@ -9,7 +9,7 @@ public class GameController : MonoBehaviour
     private int score = 0;
     private int life = 10;
     private int maxLife = 15;
-    private float generatePlayerUnitTimeOut = 1f;
+    private float generatePlayerUnitTimeOut = 1.5f;
     private float generateEnemyUnitTimeOut = 1f;
     private float generatePlayerUnitTime;
     private float generateEnemyUnitTime;
