@@ -6,6 +6,7 @@ using UnityEngine.SceneManagement;
 
 public class GameController : MonoBehaviour
 {
+    private int score = 0;
     private int life = 10;
     private int maxLife = 15;
     private float generatePlayerUnitTimeOut = 1f;
@@ -22,6 +23,7 @@ public class GameController : MonoBehaviour
     public Button attackerButton;
     public Button tankerButton;
     public Button healerButton;
+    public Text scoreText;
 
     // Start is called before the first frame update
     void Start()
@@ -104,5 +106,11 @@ public class GameController : MonoBehaviour
             GameObject cloneLifeHeart = Instantiate(lifeHeart, new Vector3(-9 - -life, 4f, 0f), Quaternion.identity);
             cloneLifeHeart.name = "cloneLifeHeart" + life.ToString();
         }
+    }
+
+    public void AddScore(int hitScore)
+    {
+        score += hitScore;
+        scoreText.text = "SCORE" + score;
     }
 }

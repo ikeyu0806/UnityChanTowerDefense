@@ -16,6 +16,7 @@ public class HealerController : MonoBehaviour
     {
         gameController = GameObject.Find("GameController");
         SearchTarget();
+        healLife();
     }
 
     // Update is called once per frame
@@ -25,6 +26,12 @@ public class HealerController : MonoBehaviour
         if (!isCollision)
         {
             transform.position = Vector3.MoveTowards(transform.position, target.transform.position, speed);
+        }
+
+        healTime += Time.deltaTime;
+        if (healTime >= healTimeOut)
+        {
+            healLife();
         }
     }
 
@@ -55,11 +62,6 @@ public class HealerController : MonoBehaviour
 
     void healLife()
     {
-        healTime += Time.deltaTime;
-
-        if (healTime >= healTimeOut)
-        {
-            gameController.GetComponent<GameController>().healLife();
-        }
+        gameController.GetComponent<GameController>().healLife();
     }
 }

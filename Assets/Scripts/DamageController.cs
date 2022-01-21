@@ -7,6 +7,14 @@ public class DamageController : MonoBehaviour
     public int attackPower;
     public int unitHP;
 
+    GameObject gameController;
+
+    // Start is called before the first frame update
+    void Start()
+    {
+        gameController = GameObject.Find("GameController");
+    }
+
     public void Damage(float damage)
     {
         unitHP = (int)Mathf.Clamp(unitHP - damage, 0, unitHP);
@@ -14,6 +22,7 @@ public class DamageController : MonoBehaviour
         if (unitHP <= 0)
         {
             Destroy(gameObject);
+            gameController.GetComponent<GameController>().AddScore(100);
         }
     }
 
