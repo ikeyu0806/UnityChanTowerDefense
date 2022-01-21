@@ -6,7 +6,8 @@ using UnityEngine.SceneManagement;
 public class GameController : MonoBehaviour
 {
     private int life = 10;
-    public float timeOut;
+    private float generatePlayerUnitTimeOut = 3f;
+    private float generateEnemyUnitTimeOut = 1f;
     private float generatePlayerUnitTime;
     private float generateEnemyUnitTime;
     public GameObject playerUnit;
@@ -32,7 +33,7 @@ public class GameController : MonoBehaviour
     {
         generatePlayerUnitTime += Time.deltaTime;
 
-        if (generatePlayerUnitTime >= timeOut)
+        if (generatePlayerUnitTime >= generatePlayerUnitTimeOut)
         {
             Instantiate(playerUnit, new Vector3(castle.transform.position.x, castle.transform.position.y, castle.transform.position.z), Quaternion.identity);
 
@@ -41,7 +42,7 @@ public class GameController : MonoBehaviour
 
         generateEnemyUnitTime += Time.deltaTime;
 
-        if (generateEnemyUnitTime >= timeOut)
+        if (generateEnemyUnitTime >= generateEnemyUnitTimeOut)
         {
             int y = Random.Range(-4, 4);
             Instantiate(enemyUnit, new Vector3(10f, y, 0), Quaternion.identity);
