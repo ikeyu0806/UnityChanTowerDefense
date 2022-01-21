@@ -12,11 +12,19 @@ public class GameController : MonoBehaviour
     public GameObject playerUnit;
     public GameObject enemyUnit;
     public GameObject castle;
+    public GameObject lifeHeart;
 
     // Start is called before the first frame update
     void Start()
     {
-        
+        int lifeCount = life;
+        Debug.Log(lifeCount);
+        while(0 < lifeCount)
+        {
+            GameObject cloneLifeHeart = Instantiate(lifeHeart, new Vector3(-9 - -lifeCount, 4f, 0f), Quaternion.identity);
+            cloneLifeHeart.name = "cloneLifeHeart" + lifeCount.ToString();
+            lifeCount--;
+        }
     }
 
     // Update is called once per frame
@@ -49,6 +57,8 @@ public class GameController : MonoBehaviour
 
     public void reduceLife()
     {
+        GameObject deleteLifeHeart = GameObject.Find("cloneLifeHeart" + life.ToString());
+        Destroy(deleteLifeHeart);
         life--;
     }
 }
