@@ -5,7 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class GameController : MonoBehaviour
 {
-    private int life = 3;
+    private int life = 10;
     public float timeOut;
     private float generatePlayerUnitTime;
     private float generateEnemyUnitTime;
