@@ -1,13 +1,14 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
 public class GameController : MonoBehaviour
 {
     private int life = 10;
     private int maxLife = 15;
-    private float generatePlayerUnitTimeOut = 3f;
+    private float generatePlayerUnitTimeOut = 1f;
     private float generateEnemyUnitTimeOut = 1f;
     private float generatePlayerUnitTime;
     private float generateEnemyUnitTime;
@@ -18,6 +19,9 @@ public class GameController : MonoBehaviour
     public GameObject enemyUnit;
     public GameObject castle;
     public GameObject lifeHeart;
+    public Button attackerButton;
+    public Button tankerButton;
+    public Button healerButton;
 
     // Start is called before the first frame update
     void Start()
@@ -70,16 +74,26 @@ public class GameController : MonoBehaviour
     public void selectAttackerPlayerUnit()
     {
         selectedPlayerUnit = attackerPlayerUnit;
+        attackerButton.image.color = Color.green;
+        tankerButton.image.color = Color.white;
+        healerButton.image.color = Color.white;
+
     }
 
     public void selectTankerPlayerUnit()
     {
         selectedPlayerUnit = tankerPlayerUnit;
+        attackerButton.image.color = Color.white;
+        tankerButton.image.color = Color.green;
+        healerButton.image.color = Color.white;
     }
 
     public void selectHealerPlayerUnit()
     {
         selectedPlayerUnit = healerPlayerUnit;
+        attackerButton.image.color = Color.white;
+        tankerButton.image.color = Color.white;
+        healerButton.image.color = Color.green;
     }
 
     public void healLife()
