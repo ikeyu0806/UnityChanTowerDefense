@@ -304,7 +304,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 168400058}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1432411405}
+        m_TargetAssemblyTypeName: GameController, Assembly-CSharp
+        m_MethodName: selectTankerPlayerUnit
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &168400058
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -355,6 +367,7 @@ GameObject:
   - component: {fileID: 415929756}
   - component: {fileID: 415929755}
   - component: {fileID: 415929754}
+  - component: {fileID: 415929757}
   m_Layer: 5
   m_Name: AttackerButton
   m_TagString: Untagged
@@ -425,7 +438,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 415929755}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1432411405}
+        m_TargetAssemblyTypeName: GameController, Assembly-CSharp
+        m_MethodName: selectAttackerPlayerUnit
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &415929755
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -464,6 +489,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 415929752}
   m_CullTransparentMesh: 1
+--- !u!114 &415929757
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 415929752}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 598eb44340da74d589be36d8de0e7e0f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gameController: {fileID: 0}
 --- !u!1 &519420028
 GameObject:
   m_ObjectHideFlags: 0
@@ -957,7 +995,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1298747755}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1432411405}
+        m_TargetAssemblyTypeName: GameController, Assembly-CSharp
+        m_MethodName: selectTankerPlayerUnit
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 1
 --- !u!114 &1298747755
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1120,8 +1170,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a089c05df1e1e44cfaae116e55276964, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  timeOut: 1
-  playerUnit: {fileID: 1719358188232364124, guid: 0d1a16628ddf54fcfa6587feabadb751, type: 3}
+  attackerPlayerUnit: {fileID: 1719358188232364124, guid: 0d1a16628ddf54fcfa6587feabadb751, type: 3}
+  tankerPlayerUnit: {fileID: 0}
   enemyUnit: {fileID: 3111278947056743817, guid: 2f9e20238be584f76909798cb434bb72, type: 3}
   castle: {fileID: 75844220}
   lifeHeart: {fileID: 8521571864961319012, guid: 597be8373bcad41f1bd91b39886c3322, type: 3}

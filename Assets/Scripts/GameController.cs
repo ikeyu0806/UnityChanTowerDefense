@@ -10,7 +10,9 @@ public class GameController : MonoBehaviour
     private float generateEnemyUnitTimeOut = 1f;
     private float generatePlayerUnitTime;
     private float generateEnemyUnitTime;
-    public GameObject playerUnit;
+    public GameObject attackerPlayerUnit;
+    public GameObject tankerPlayerUnit;
+    private GameObject selectedPlayerUnit;
     public GameObject enemyUnit;
     public GameObject castle;
     public GameObject lifeHeart;
@@ -18,8 +20,8 @@ public class GameController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        selectAttackerPlayerUnit();
         int lifeCount = life;
-        Debug.Log(lifeCount);
         while(0 < lifeCount)
         {
             GameObject cloneLifeHeart = Instantiate(lifeHeart, new Vector3(-9 - -lifeCount, 4f, 0f), Quaternion.identity);
@@ -35,7 +37,7 @@ public class GameController : MonoBehaviour
 
         if (generatePlayerUnitTime >= generatePlayerUnitTimeOut)
         {
-            Instantiate(playerUnit, new Vector3(castle.transform.position.x, castle.transform.position.y, castle.transform.position.z), Quaternion.identity);
+            Instantiate(selectedPlayerUnit, new Vector3(castle.transform.position.x, castle.transform.position.y, castle.transform.position.z), Quaternion.identity);
 
             generatePlayerUnitTime = 0.0f;
         }
@@ -61,5 +63,15 @@ public class GameController : MonoBehaviour
         GameObject deleteLifeHeart = GameObject.Find("cloneLifeHeart" + life.ToString());
         Destroy(deleteLifeHeart);
         life--;
+    }
+
+    public void selectAttackerPlayerUnit()
+    {
+        selectedPlayerUnit = attackerPlayerUnit;
+    }
+
+    public void selectTankerPlayerUnit()
+    {
+        selectedPlayerUnit = tankerPlayerUnit;
     }
 }

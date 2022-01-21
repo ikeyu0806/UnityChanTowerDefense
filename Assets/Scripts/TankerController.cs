@@ -2,10 +2,10 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class AttackerController : MonoBehaviour
+public class TankerController : MonoBehaviour
 {
-    float speed = 0.08f;
     bool isCollision = false;
+    float speed = 0.01f;
     GameObject target;
 
     // Start is called before the first frame update
