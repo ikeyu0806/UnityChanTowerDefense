@@ -6,12 +6,14 @@ using UnityEngine.SceneManagement;
 public class GameController : MonoBehaviour
 {
     private int life = 10;
+    private int maxLife = 15;
     private float generatePlayerUnitTimeOut = 3f;
     private float generateEnemyUnitTimeOut = 1f;
     private float generatePlayerUnitTime;
     private float generateEnemyUnitTime;
     public GameObject attackerPlayerUnit;
     public GameObject tankerPlayerUnit;
+    public GameObject healerPlayerUnit;
     private GameObject selectedPlayerUnit;
     public GameObject enemyUnit;
     public GameObject castle;
@@ -73,5 +75,20 @@ public class GameController : MonoBehaviour
     public void selectTankerPlayerUnit()
     {
         selectedPlayerUnit = tankerPlayerUnit;
+    }
+
+    public void selectHealerPlayerUnit()
+    {
+        selectedPlayerUnit = healerPlayerUnit;
+    }
+
+    public void healLife()
+    {
+        if (maxLife > life)
+        {
+            life++;
+            GameObject cloneLifeHeart = Instantiate(lifeHeart, new Vector3(-9 - -life, 4f, 0f), Quaternion.identity);
+            cloneLifeHeart.name = "cloneLifeHeart" + life.ToString();
+        }
     }
 }

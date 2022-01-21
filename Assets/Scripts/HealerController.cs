@@ -2,15 +2,19 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class TankerController : MonoBehaviour
+public class HealerController : MonoBehaviour
 {
     bool isCollision = false;
-    float speed = 0.08f;
+    float speed = 0.05f;
+    float healTimeOut = 3f;
+    float healTime;
     GameObject target;
+    GameObject gameController;
 
     // Start is called before the first frame update
     void Start()
     {
+        gameController = GameObject.Find("GameController");
         SearchTarget();
     }
 
@@ -46,6 +50,16 @@ public class TankerController : MonoBehaviour
                 nearDis = tmpDis;
                 target = obj;
             }
+        }
+    }
+
+    void healLife()
+    {
+        healTime += Time.deltaTime;
+
+        if (healTime >= healTimeOut)
+        {
+            gameController.GetComponent<GameController>().healLife();
         }
     }
 }
