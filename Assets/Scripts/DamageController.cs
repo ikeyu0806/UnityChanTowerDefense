@@ -22,7 +22,10 @@ public class DamageController : MonoBehaviour
         if (unitHP <= 0)
         {
             Destroy(gameObject);
-            gameController.GetComponent<GameController>().AddScore(100);
+            if (transform.tag == "EnemyUnit")
+            {
+                gameController.GetComponent<GameController>().AddScore(100);
+            }
         }
     }
 
