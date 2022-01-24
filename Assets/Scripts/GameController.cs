@@ -32,7 +32,7 @@ public class GameController : MonoBehaviour
         int lifeCount = life;
         while(0 < lifeCount)
         {
-            GameObject cloneLifeHeart = Instantiate(lifeHeart, new Vector3(-9 - -lifeCount, 4f, 0f), Quaternion.identity);
+            GameObject cloneLifeHeart = Instantiate(lifeHeart, new Vector3(-8 - -lifeCount, 4f, 0f), Quaternion.identity);
             cloneLifeHeart.name = "cloneLifeHeart" + lifeCount.ToString();
             lifeCount--;
         }
