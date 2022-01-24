@@ -17,14 +17,14 @@ public class TankerController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        SearchTarget();
         if (!isCollision)
         {
+            SearchTarget();
             transform.position = Vector3.MoveTowards(transform.position, target.transform.position, speed);
         }
     }
 
-    private void OnTriggerEnter2D(Collider2D collision)
+    private void OnCollisionEnter2D(Collision2D collision)
     {
         isCollision = true;
     }

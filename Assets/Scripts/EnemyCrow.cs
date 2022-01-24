@@ -26,16 +26,12 @@ public class EnemyCrow : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
+        isCollision = true;
         if (collision.gameObject.tag == "Castle")
         {
             Destroy(gameObject);
             gameController.GetComponent<GameController>().reduceLife();
         }
-    }
-
-    private void OnTriggerEnter2D(Collider2D collision)
-    {
-        isCollision = true;
     }
 
     private void OnCollisionExit2D(Collision2D collision)

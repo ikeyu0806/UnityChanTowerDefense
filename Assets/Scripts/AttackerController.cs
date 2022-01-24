@@ -24,7 +24,7 @@ public class AttackerController : MonoBehaviour
         }
     }
 
-    private void OnTriggerEnter2D(Collider2D collision)
+    private void OnCollisionEnter2D(Collision2D collision)
     {
         isCollision = true;
     }
